@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic GPA & CGPA Hub (10.0 Scale)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Academic Performance Hub</h1>
+        <p>Calculate your 10-point standing and project your academic future.</p>
+    </header>
+
+    <div class="grid">
+        <main>
+            <div class="card">
+                <h2>1. Prior Semesters (Cumulative Base)</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prev-credits">Total Earned Credits</label>
+                        <input type="number" id="prev-credits" min="0" placeholder="e.g., 45" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="prev-cgpa">Prior CGPA (Max 10.0)</label>
+                        <input type="number" id="prev-cgpa" min="0" max="10" step="0.01" placeholder="e.g., 8.50" value="0.00">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>2. Current Semester Courses</h2>
+                <div id="subjects-container"></div>
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-primary" id="add-course-btn">+ Add Course</button>
+                    <button type="button" class="btn btn-success" id="calculate-btn">Save Snapshot</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>3. "What-If" Graduation Simulator</h2>
+                <p class="card-subtitle">
+                    Project how future semesters will impact your final graduation CGPA.
+                </p>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="future-credits">Remaining Credits to Graduate</label>
+                        <input type="number" id="future-credits" min="0" placeholder="e.g., 60" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="target-gpa">Expected Average Target SGPA (Max 10.0)</label>
+                        <input type="number" id="target-gpa" min="0" max="10" step="0.01" placeholder="e.g., 9.00" value="0.00">
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="results-card">
+                <h2>Semester Overview</h2>
+                <div class="results-display text-primary" id="semester-gpa-display">0.00</div>
+                <div class="stat-box">
+                    <span>Semester Credits:</span>
+                    <span id="sem-credits-stat" class="font-bold">0</span>
+                </div>
+
+                <h2 class="section-spacing">Running CGPA (10.0 Scale)</h2>
+                <div class="results-display text-success" id="running-cgpa-display">0.00</div>
+                <div class="stat-box">
+                    <span>Total Lifetime Credits:</span>
+                    <span id="total-credits-stat" class="font-bold">0</span>
+                </div>
+
+                <h2 class="section-spacing">Simulated Graduation CGPA</h2>
+                <div class="results-display text-warning" id="simulated-cgpa-display">0.00</div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
